@@ -46,6 +46,7 @@ function addTeamMember() {
 
                 case "All Done":
                     console.log("You're all done adding team members");
+                    console.log(teamMembers);
                     break;
             };
         })
@@ -158,17 +159,17 @@ function createTMobj(answers, type) {
     switch (type) {
         case "Manager":
             newTM = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
-            console.log(newTM);
             break;
         case "Engineer":
             newTM = new Engineer(answers.name, answers.id, answers.email, answers.github);
-            console.log(newTM);
             break;
         case "Intern":
             newTM = new Intern(answers.name, answers.id, answers.email, answers.school);
-            console.log(newTM);
             break;
     };
+
+    teamMembers.push(newTM);
+    addTeamMember();
 };
 
 
