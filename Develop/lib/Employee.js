@@ -25,7 +25,4 @@ class Employee {
     };
 };
 
-const Tim = new Employee ("Tim", 1, "tim@gmail.com");
-
-console.log(Tim);
 module.exports = Employee;

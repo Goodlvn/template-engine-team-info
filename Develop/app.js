@@ -10,6 +10,75 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+const teamMembers = [];
+
+///----------------------------------------------------------///----------------------------------------------------------
+
+function createTeam() {
+    inquirer
+        .prompt([
+
+            {
+                type: "list",
+                message: "What kind of team member would you like to add?",
+                choices: ["Manager", "Engineer", "Intern", "All Done"],
+                name: "memberClass",
+            },
+        ])
+        .then(answer => {
+
+            switch (answer.memberClass) {
+
+                case "Manager":
+                    console.log("You chose Manager");
+                    break;
+
+                case "Engineer":
+                    console.log("You chose Engineer");
+                    break;
+
+                case "Intern":
+                    console.log("You chose Intern");
+                    break;
+
+                case "All Done":
+                    console.log("You're all done adding team members");
+                    break;
+
+            };
+        })
+        .catch(err => {
+            console.log("Can not render list in current environment");
+        });
+
+};
+
+createTeam();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)

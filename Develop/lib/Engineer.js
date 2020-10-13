@@ -12,7 +12,6 @@ class Engineer extends Employee {
     getGithub (){
         return this.github;
     };
-
 };
 
 module.exports = Engineer;
