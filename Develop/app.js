@@ -45,8 +45,10 @@ function addTeamMember() {
                     break;
 
                 case "All Done":
-                    console.log("You're all done adding team members");
-                    console.log(teamMembers);
+                    fs.writeFile(outputPath, render(teamMembers), err => {
+                        if(err) throw err;
+                        console.log("Congrats! Check out your Team!");
+                    });
                     break;
             };
         })
