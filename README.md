@@ -39,8 +39,8 @@ This is an app designed to help you keep your teams information in one place wit
      <td>Add another Team member</td>
   </tr>
   <tr>
-    <td valign="top"><img src="assets/images/te-1.png" width="500px"></td>
-    <td valign="top"><img src="assets/images/te-2.png" width="500px"></td>
+    <td valign="top"><img src="assets/te-1.png" width="500px"></td>
+    <td valign="top"><img src="assets/te-2.png" width="500px"></td>
   </tr>
   <tr>
      <td>All Done!</td>
@@ -48,7 +48,7 @@ This is an app designed to help you keep your teams information in one place wit
   </tr>
   <tr>
     <td valign="top"><img src="te-3.png" width="500px"></td>
-    <td valign="top"><img src="assets/images/te-4.png" width="500px"></td>
+    <td valign="top"><img src="assets/te-4.png" width="500px"></td>
   </tr>
  </table>
 
