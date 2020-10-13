@@ -31,27 +31,128 @@ function createTeam() {
 
                 case "Manager":
                     console.log("You chose Manager");
+                    promptManagerQs();
                     break;
 
                 case "Engineer":
                     console.log("You chose Engineer");
+                    promptEngineerQs();
                     break;
 
                 case "Intern":
                     console.log("You chose Intern");
+                    promptInternQs();
                     break;
 
                 case "All Done":
                     console.log("You're all done adding team members");
                     break;
-
             };
         })
-        .catch(err => {
+        .catch(() => {
             console.log("Can not render list in current environment");
         });
-
 };
+
+function promptManagerQs (){
+    inquirer
+    .prompt ([
+
+        {
+            type: "input",
+            message: "What is the manager's name?",
+            name: "name",
+        },
+        {
+            type: "input",
+            message: "What is the manager's ID?",
+            name: "name",
+        },
+        {
+            type: "input",
+            message: "What is the manager's email?",
+            name: "name",
+        },
+        {
+            type: "input",
+            message: "What is the manager's office number?",
+            name: "name",
+        },
+    ])
+    .then (answers => {
+        creatTeamMember(answers, "Manager");
+    })
+    .catch(() => {
+        console.log("Can not render list in current environment");
+    })
+}
+
+function promptEngineerQs (){
+    inquirer
+    .prompt ([
+
+        {
+            type: "input",
+            message: "What is the engineer's name?",
+            name: "name",
+        },
+        {
+            type: "input",
+            message: "What is the engineer's ID?",
+            name: "name",
+        },
+        {
+            type: "input",
+            message: "What is the engineer's email?",
+            name: "name",
+        },
+        {
+            type: "input",
+            message: "What is the engineer's Git Hub username?",
+            name: "name",
+        },
+    ])
+    .then (answers => {
+        creatTeamMember(answers, "Engineer");
+    })
+    .catch(() => {
+        console.log("Can not render list in current environment");
+    });
+}
+
+function promptInternQs (){
+    inquirer
+    .prompt ([
+
+        {
+            type: "input",
+            message: "What is the intern's name?",
+            name: "name",
+        },
+        {
+            type: "input",
+            message: "What is the intern's ID?",
+            name: "name",
+        },
+        {
+            type: "input",
+            message: "What is the intern's email?",
+            name: "name",
+        },
+        {
+            type: "input",
+            message: "What school is the intern coming from?",
+            name: "name",
+        },
+    ])
+    .then (answers => {
+        creatTeamMember(answers, "Intern");
+    })
+    .catch(() => {
+        console.log("Can not render list in current environment");
+    });
+};
+
 
 createTeam();
 
