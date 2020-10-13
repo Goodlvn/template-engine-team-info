@@ -14,7 +14,7 @@ const teamMembers = [];
 
 ///----------------------------------------------------------///----------------------------------------------------------
 
-function createTeam() {
+function addTeamMember() {
     inquirer
         .prompt([
 
@@ -54,107 +54,127 @@ function createTeam() {
         });
 };
 
-function promptManagerQs (){
+function promptManagerQs() {
     inquirer
-    .prompt ([
+        .prompt([
 
-        {
-            type: "input",
-            message: "What is the manager's name?",
-            name: "name",
-        },
-        {
-            type: "input",
-            message: "What is the manager's ID?",
-            name: "name",
-        },
-        {
-            type: "input",
-            message: "What is the manager's email?",
-            name: "name",
-        },
-        {
-            type: "input",
-            message: "What is the manager's office number?",
-            name: "name",
-        },
-    ])
-    .then (answers => {
-        creatTeamMember(answers, "Manager");
-    })
-    .catch(() => {
-        console.log("Can not render list in current environment");
-    })
+            {
+                type: "input",
+                message: "What is the manager's name?",
+                name: "name",
+            },
+            {
+                type: "input",
+                message: "What is the manager's ID?",
+                name: "id",
+            },
+            {
+                type: "input",
+                message: "What is the manager's email?",
+                name: "email",
+            },
+            {
+                type: "input",
+                message: "What is the manager's office number?",
+                name: "officeNumber",
+            },
+        ])
+        .then(answers => {
+            createTMobj(answers, "Manager");
+        })
+        .catch(() => {
+            console.log("Can not render list in current environment");
+        })
 }
 
-function promptEngineerQs (){
+function promptEngineerQs() {
     inquirer
-    .prompt ([
+        .prompt([
 
-        {
-            type: "input",
-            message: "What is the engineer's name?",
-            name: "name",
-        },
-        {
-            type: "input",
-            message: "What is the engineer's ID?",
-            name: "name",
-        },
-        {
-            type: "input",
-            message: "What is the engineer's email?",
-            name: "name",
-        },
-        {
-            type: "input",
-            message: "What is the engineer's Git Hub username?",
-            name: "name",
-        },
-    ])
-    .then (answers => {
-        creatTeamMember(answers, "Engineer");
-    })
-    .catch(() => {
-        console.log("Can not render list in current environment");
-    });
+            {
+                type: "input",
+                message: "What is the engineer's name?",
+                name: "name",
+            },
+            {
+                type: "input",
+                message: "What is the engineer's ID?",
+                name: "id",
+            },
+            {
+                type: "input",
+                message: "What is the engineer's email?",
+                name: "email",
+            },
+            {
+                type: "input",
+                message: "What is the engineer's Git Hub username?",
+                name: "github",
+            },
+        ])
+        .then(answers => {
+            createTMobj(answers, "Engineer");
+        })
+        .catch(() => {
+            console.log("Can not render list in current environment");
+        });
 }
 
-function promptInternQs (){
+function promptInternQs() {
     inquirer
-    .prompt ([
+        .prompt([
 
-        {
-            type: "input",
-            message: "What is the intern's name?",
-            name: "name",
-        },
-        {
-            type: "input",
-            message: "What is the intern's ID?",
-            name: "name",
-        },
-        {
-            type: "input",
-            message: "What is the intern's email?",
-            name: "name",
-        },
-        {
-            type: "input",
-            message: "What school is the intern coming from?",
-            name: "name",
-        },
-    ])
-    .then (answers => {
-        creatTeamMember(answers, "Intern");
-    })
-    .catch(() => {
-        console.log("Can not render list in current environment");
-    });
+            {
+                type: "input",
+                message: "What is the intern's name?",
+                name: "name",
+            },
+            {
+                type: "input",
+                message: "What is the intern's ID?",
+                name: "id",
+            },
+            {
+                type: "input",
+                message: "What is the intern's email?",
+                name: "email",
+            },
+            {
+                type: "input",
+                message: "What school is the intern coming from?",
+                name: "school",
+            },
+        ])
+        .then(answers => {
+            createTMobj(answers, "Intern");
+        })
+        .catch(() => {
+            console.log("Can not render list in current environment");
+        });
+};
+
+function createTMobj(answers, type) {
+    let newTM;
+    switch (type) {
+        case "Manager":
+            newTM = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
+            console.log(newTM);
+            break;
+        case "Engineer":
+            newTM = new Engineer(answers.name, answers.id, answers.email, answers.github);
+            console.log(newTM);
+            break;
+        case "Intern":
+            newTM = new Intern(answers.name, answers.id, answers.email, answers.school);
+            console.log(newTM);
+            break;
+    };
 };
 
 
-createTeam();
+
+
+addTeamMember();
 
 
 
