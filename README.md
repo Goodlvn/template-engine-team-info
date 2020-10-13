@@ -9,7 +9,7 @@
 
 ## Description
 
-This is an app designed to help you keep your teams information in one place with a clean interface. By using your Terminal you can input your teams information and generate this list! 
+This is an app designed to help you keep your teams information in one place with a clean interface. By using your Terminal you can input your teams information and generate said list! 
 
 ## Table of Contents
 
