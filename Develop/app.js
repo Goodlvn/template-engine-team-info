@@ -65,21 +65,33 @@ function promptManagerQs() {
                 type: "input",
                 message: "What is the manager's name?",
                 name: "name",
+                validate: function validateNameBlank(name){
+                    return name !== '';
+                },
             },
             {
                 type: "input",
                 message: "What is the manager's ID?",
                 name: "id",
+                validate: function validateIdBlank(name){
+                    return name !== '';
+                },
             },
             {
                 type: "input",
                 message: "What is the manager's email?",
                 name: "email",
+                validate: function validateEmailBlank(name){
+                    return name !== '';
+                },
             },
             {
                 type: "input",
                 message: "What is the manager's office number?",
                 name: "officeNumber",
+                validate: function validateOfficeBlank(name){
+                    return name !== '';
+                },
             },
         ])
         .then(answers => {
@@ -98,21 +110,33 @@ function promptEngineerQs() {
                 type: "input",
                 message: "What is the engineer's name?",
                 name: "name",
+                validate: function validateNameBlank(name){
+                    return name !== '';
+                },
             },
             {
                 type: "input",
                 message: "What is the engineer's ID?",
                 name: "id",
+                validate: function validateIdBlank(name){
+                    return name !== '';
+                },
             },
             {
                 type: "input",
                 message: "What is the engineer's email?",
                 name: "email",
+                validate: function validateEmailBlank(name){
+                    return name !== '';
+                },
             },
             {
                 type: "input",
                 message: "What is the engineer's Git Hub username?",
                 name: "github",
+                validate: function validateGitBlank(name){
+                    return name !== '';
+                },
             },
         ])
         .then(answers => {
@@ -131,21 +155,33 @@ function promptInternQs() {
                 type: "input",
                 message: "What is the intern's name?",
                 name: "name",
+                validate: function validateNameBlank(name){
+                    return name !== '';
+                },
             },
             {
                 type: "input",
                 message: "What is the intern's ID?",
                 name: "id",
+                validate: function validateIdBlank(name){
+                    return name !== '';
+                },
             },
             {
                 type: "input",
                 message: "What is the intern's email?",
                 name: "email",
+                validate: function validateEmailBlank(name){
+                    return name !== '';
+                },
             },
             {
                 type: "input",
                 message: "What school is the intern coming from?",
                 name: "school",
+                validate: function validateSchoolBlank(name){
+                    return name !== '';
+                },
             },
         ])
         .then(answers => {
